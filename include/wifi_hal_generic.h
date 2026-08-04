@@ -1276,6 +1276,7 @@ typedef struct _wifi_associated_dev3
     wifi_csi_data_t *cli_CsiData;
 
     UINT cli_activeNumSpatialStreams; /**< The number of active spatial streams in the session between the AP and client at the moment of polling. */
+    UINT cli_capableNumSpatialStreeams; /**< The maximum number of spatial streams supported/capable by the client device in the session. */ 
     ULLONG cli_TxFrames; /**< The total number of frames transmitted to the client. */
     ULLONG cli_RxRetries; /**< Number of RX retries. */
     ULLONG cli_RxErrors; /**< Number of RX errors. */
