@@ -20,6 +20,10 @@
 /**********************************************************************
     Notes:
 
+    What is new for 3.0.7
+
+      1. Added cli_capableNumSpatialStreams field to wifi_associated_dev3_t structure in wifi_hal_generic.h file.
+
     What is new for 3.0.6
 
       1. Added new security types wifi_security_key_type_saeext, wifi_security_key_type_sae_saeext
@@ -192,7 +196,7 @@ extern "C"{
 // Defines for HAL version 3.0.6
 #define WIFI_HAL_MAJOR_VERSION 3        /**< Wi-Fi HAL major version. */
 #define WIFI_HAL_MINOR_VERSION 0        /**< Wi-Fi HAL minor version. */
-#define WIFI_HAL_MAINTENANCE_VERSION 6  /**< Wi-Fi HAL maintenance version. */
+#define WIFI_HAL_MAINTENANCE_VERSION 7  /**< Wi-Fi HAL maintenance version. */
 
 #define WIFI_HAL_VERSION \
     (WIFI_HAL_MAJOR_VERSION * 1000 + WIFI_HAL_MINOR_VERSION * 10 + WIFI_HAL_MAINTENANCE_VERSION) /**< Wi-Fi HAL version. */
@@ -1276,7 +1280,6 @@ typedef struct _wifi_associated_dev3
     wifi_csi_data_t *cli_CsiData;
 
     UINT cli_activeNumSpatialStreams; /**< The number of active spatial streams in the session between the AP and client at the moment of polling. */
-    UINT cli_capableNumSpatialStreams; /**< The maximum number of spatial streams supported/capable by the client device in the session. */
     ULLONG cli_TxFrames; /**< The total number of frames transmitted to the client. */
     ULLONG cli_RxRetries; /**< Number of RX retries. */
     ULLONG cli_RxErrors; /**< Number of RX errors. */
@@ -1286,6 +1289,7 @@ typedef struct _wifi_associated_dev3
     mac_address_t cli_MLDAddr; /* Indicates the MLD MAC address of the connected client, 00's for non-Wi-Fi 7 clients. */
     BOOL cli_PowerSaveMode;  /* Indicates the station is in Power save mode or not. */
     ULONG cli_sleepTime;  /* Indicates the station's sleep time. */
+    UINT cli_capableNumSpatialStreams; /**< The maximum number of spatial streams supported/capable by the client device in the session. */
 } wifi_associated_dev3_t;
 
 /** @} */  //END OF GROUP WIFI_HAL_TYPES
